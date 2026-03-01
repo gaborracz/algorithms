@@ -1,4 +1,5 @@
 #include "queue.h"
+#include "student.h"
 #include <iostream>
 
 int main()
@@ -41,4 +42,19 @@ int main()
   std::cout << "Queue size is: " << intQueue.getLength() << std::endl;
   std::cout << "Queue capacity is: " << intQueue.getCapacity() << std::endl;
   std::cout << "Queue start position is: " << intQueue.getStartPos() << std::endl;
+
+  Student s1{1, "Bilbo Baggins"};
+  Student s2{2, "Tom Bombadil"};
+  Student s3{3, "Gandalf the White"};
+
+  Queue<Student> studentQueue;
+  studentQueue.add(s1);
+  studentQueue.add(s2);
+  studentQueue.add(s3);
+
+  std::cout << studentQueue.rem() << std::endl;
+  std::cout << studentQueue.rem() << std::endl;
+  std::cout << studentQueue.rem() << std::endl;
+
+  std::cout << "End of main..." << std::endl;
 }
