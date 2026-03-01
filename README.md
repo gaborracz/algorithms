@@ -18,10 +18,20 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ## Compile
 
 ```sh
-➜  g++ -W -Wall --pedantic StackMain.cpp
+g++ -W -Wall --pedantic StackMain.cpp
+```
+
+Compile QueueMain when Student class is used:
+
+```sh
+g++ -W -Wall --pedantic QueueMain.cpp Student.cpp
 ```
 
 ## Check memory leaks
+
+```sh
+leaks --atExit -- ./a.out
+```
 
 ```sh
 ➜  leaks --atExit -- ./a.out
