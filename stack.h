@@ -50,6 +50,12 @@ private:
   }
 
 public:
+  // Delete default copy constructor.
+  Stack(const Stack& other) = delete;
+
+  // Disable copy assignment operator.
+  Stack& operator=(const Stack& other) = delete;
+
   // Constructs an empty Stack object with initial size of 0
   // and initial capacity of 16 elements.
   Stack()
@@ -87,7 +93,7 @@ public:
     if (m_size == 0) { throw std::out_of_range("Stack<T>::pop(): stack is empty"); }
 
     m_size--;
-    T value = m_data[m_size];
+    T value = std::move(m_data[m_size]);
 
     Traits::destroy(m_alloc, m_data + m_size);
 
