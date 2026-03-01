@@ -29,6 +29,8 @@ g++ -W -Wall --pedantic QueueMain.cpp Student.cpp
 
 ## Check memory leaks
 
+The recommended tool on macOS is leaks, on Linux valgrind can be used. Develop on Windows is not recommended.
+
 ```sh
 leaks --atExit -- ./a.out
 ```
