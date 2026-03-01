@@ -79,7 +79,7 @@ public:
   }
 
   // Inserts a new element on top of the Stack.
-  void push(T newElement)
+  void push(const T& newElement)
   {
     if (m_size == m_capacity) { increaseSize(); }
 

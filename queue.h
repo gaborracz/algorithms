@@ -63,7 +63,7 @@ public:
   }
 
   // Join an element to the end of the queue.
-  void add(T newElement)
+  void add(const T& newElement)
   {
     if (m_capacity == m_size ) { increaseSize(); }
 
