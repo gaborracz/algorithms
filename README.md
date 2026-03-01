@@ -1,4 +1,4 @@
-# Algorithms
+# Info
 
 ## Scope
 
@@ -59,3 +59,20 @@ leaks Report Version: 4.0, multi-line stacks
 Process 45896: 189 nodes malloced for 96 KB
 Process 45896: 0 leaks for 0 total leaked bytes.
 ```
+
+# Algorithms
+
+## Stack
+
+The stack.h is my C++ implementation of the linear LIFO data structure called stack.
+Its written in a template class to support any primitive data type or object.
+Memory management is implemented with std::allocator instead of new and delete. This guarantees a few important things:
+- Memory allocation is separated from object condition, so objects that can only be constructed with values specified in the formal parameter list can be added.
+- Also, objects are not constructed automatically when allocating memory which would cause significant overheads when dealing with "expensive" objects and a huge stack size.
+- Option to use special allocators like pool, stack or shared memory allocator.
+
+## Queue
+
+The queue.h is my C++ implementation of the linear FIFO data structure called the queue.
+This is an Array-based circular buffer.
+It's also written in a template class to support primitive data types and objects. Memory management is implemented with std::allocator.
