@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queueArray.h"
 #include "student.h"
 #include <iostream>
 

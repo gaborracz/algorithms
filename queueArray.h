@@ -1,5 +1,15 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#pragma once
+
+/*  @raczg
+ *  This is my implementation of the queue data structure using
+ *  manual memory management to create a circular queue which
+ *  can store different types.
+ *
+ *  Using raw memory separates memory allocation and object construction.
+ *  Other possible data types:
+ *    - std::vector<T>: would call the default constructor for all of its elements.
+ *    - T data[16]: it would also fully initialize all of its elements.
+ */
 
 #include <memory> // for allocator and allocator_traits
 #include <utility> // for std::move()
@@ -72,7 +82,7 @@ public:
   }
 
   // Remove and return the first element of the queue.
-  T rem()
+  T rem()  
   {
     if (m_size == 0) { throw std::out_of_range("Queue::rem(): queue is empty."); }
 
@@ -85,7 +95,7 @@ public:
   }
 
   // Return the first element of the queue.
-  T first() const
+  const T& first() const
   {
     if (m_size == 0) { throw std::out_of_range("Queue::first(): queue is empty."); }
 
@@ -112,4 +122,3 @@ public:
   bool isEmpty() { return m_size == 0; }
 };
 
-#endif
